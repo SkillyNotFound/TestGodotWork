@@ -2,14 +2,23 @@ extends Node2D
 
 @onready var camera = $Camera2D
 @onready var background = $TextureRect
+@onready var map_border = $MapBorder
 
 var dragging = false
 var last_mouse_pos = Vector2.ZERO
+var cam_origin = Vector2.ZERO
+var border_base = Vector2.ZERO
+var parallax = 1.3
 
 func _ready():
 	var bg_rect = background.get_global_rect()
-	camera.position = bg_rect.position + bg_rect.size / 2.0
+	cam_origin = bg_rect.position + bg_rect.size / 2.0
+	camera.position = cam_origin
+	border_base = map_border.position
 	_clamp_camera()
+
+func _process(_delta):
+	map_border.position = border_base - (camera.position - cam_origin) * (parallax - 1.0)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:

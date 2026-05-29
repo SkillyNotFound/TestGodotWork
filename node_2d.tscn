@@ -39,7 +39,7 @@ texture = ExtResource("2_kdubu")
 
 [node name="MapBorder" type="Control" parent="." unique_id=2025618902]
 layout_mode = 0
-z_index = 1
+z_index = 10
 script = ExtResource("4_border")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1388681581]
