@@ -3,9 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://blml8421qxxwb" path="res://背景.png" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://eyshyuxb8erm" path="res://主启动按钮.png" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://du31p6kmmjr6h" path="res://texture_button.gd" id="2_0e48y"]
-[ext_resource type="Script" path="res://node_2d.gd" id="3_root"]
-
 [ext_resource type="Texture2D" uid="uid://2ldruvb4lpps" path="res://装饰元素.png" id="2_kdubu"]
+[ext_resource type="Script" uid="uid://tsol2fbr5hev" path="res://node_2d.gd" id="3_root"]
 [ext_resource type="Texture2D" uid="uid://bn6gqqjiyov7f" path="res://主启动按钮-光晕.png" id="6_d21ai"]
 [ext_resource type="Script" uid="uid://djqh5idkohngk" path="res://menu_overlay.gd" id="7_menu"]
 [ext_resource type="Script" uid="uid://brgaxpktgxusd" path="res://transition_overlay.gd" id="8_trans"]
@@ -13,7 +12,7 @@
 [node name="Node2D" type="Node2D" unique_id=824800131]
 script = ExtResource("3_root")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2240348724]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=-2054618572]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
@@ -27,7 +26,6 @@ offset_right = 3840.0
 offset_bottom = 2160.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("1_0e48y")
 
@@ -37,7 +35,6 @@ offset_bottom = 2160.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("2_kdubu")
-
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1388681581]
 z_index = 1

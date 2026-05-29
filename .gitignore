@@ -1,3 +1,11 @@
-# Godot 4+ specific ignores
+# Godot 4 特定忽略项
 .godot/
-/android/
+
+# 导出的游戏包目录（建议你自己建一个 export 或 build 文件夹，并在这里忽略它）
+export/
+build/
+bin/
+
+# 系统自动生成的隐藏文件
+.DS_Store
+Thumbs.db
