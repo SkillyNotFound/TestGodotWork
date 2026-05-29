@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bn6gqqjiyov7f" path="res://主启动按钮-光晕.png" id="6_d21ai"]
 [ext_resource type="Script" uid="uid://djqh5idkohngk" path="res://menu_overlay.gd" id="7_menu"]
 [ext_resource type="Script" uid="uid://brgaxpktgxusd" path="res://transition_overlay.gd" id="8_trans"]
+[ext_resource type="Script" path="res://map_border.gd" id="4_border"]
 
 [node name="Node2D" type="Node2D" unique_id=824800131]
 script = ExtResource("3_root")
@@ -35,6 +36,11 @@ offset_bottom = 2160.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("2_kdubu")
+
+[node name="MapBorder" type="Control" parent="." unique_id=2025618902]
+layout_mode = 0
+z_index = 1
+script = ExtResource("4_border")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1388681581]
 z_index = 1

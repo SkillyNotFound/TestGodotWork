@@ -37,9 +37,10 @@ func _ready():
 	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 
 	# 六边形密铺参数：纹理 15x17 渲染为 150x170，尖顶朝上
-	spacing_x = tex_width
-	spacing_y = tex_height * 0.75
-	offset_x = tex_width * 0.5
+	var pixel_scale = tex_width / 15.0
+	spacing_x = tex_width - pixel_scale
+	spacing_y = tex_height * 0.75 - pixel_scale
+	offset_x = 7.0 * pixel_scale
 
 	# 向外多铺 2 列/2 行确保屏幕四边无空隙
 	cols = ceili(viewport_size.x / spacing_x) + 1
