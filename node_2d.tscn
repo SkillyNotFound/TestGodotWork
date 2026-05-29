@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bfpae87orb2wu"]
+
+[ext_resource type="Texture2D" uid="uid://blml8421qxxwb" path="res://背景.png" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://eyshyuxb8erm" path="res://主启动按钮.png" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://du31p6kmmjr6h" path="res://texture_button.gd" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://b6tq6jydd6jg8" path="res://边缘.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://2ldruvb4lpps" path="res://装饰元素.png" id="2_kdubu"]
+[ext_resource type="Texture2D" uid="uid://bn6gqqjiyov7f" path="res://主启动按钮-光晕.png" id="6_d21ai"]
+[ext_resource type="Script" uid="uid://djqh5idkohngk" path="res://menu_overlay.gd" id="7_menu"]
+[ext_resource type="Script" uid="uid://brgaxpktgxusd" path="res://transition_overlay.gd" id="8_trans"]
+
+[node name="Node2D" type="Node2D" unique_id=824800131]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1929330947]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 3840.0
+offset_bottom = 2160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_0e48y")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1477337140]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kdubu")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1529551891]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_epypp")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1388681581]
+z_index = 1
+offset_left = 907.0
+offset_top = 276.0
+offset_right = 1357.0
+offset_bottom = 816.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(225, 270)
+texture_normal = ExtResource("1_wtcfe")
+script = ExtResource("2_0e48y")
+
+[node name="GlowLayer" type="TextureRect" parent="TextureButton" unique_id=949366311]
+z_index = -1
+layout_mode = 0
+offset_left = -271.0
+offset_top = -232.0
+offset_right = 711.0
+offset_bottom = 776.0
+mouse_filter = 2
+texture = ExtResource("6_d21ai")
+
+[node name="MenuCanvas" type="CanvasLayer" parent="." unique_id=717853320]
+layer = 100
+
+[node name="MenuOverlay" type="Control" parent="MenuCanvas" unique_id=408129441]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("7_menu")
+
+[node name="Background" type="ColorRect" parent="MenuCanvas/MenuOverlay" unique_id=76774169]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.1, 0.1, 0.1, 1)
+
+[node name="EnterButton" type="Button" parent="MenuCanvas/MenuOverlay" unique_id=317486922]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -30.0
+offset_right = 100.0
+offset_bottom = 30.0
+text = "进入地图"
+
+[node name="TransitionOverlay" type="Control" parent="MenuCanvas/MenuOverlay" unique_id=1165863481]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+script = ExtResource("8_trans")
+
+[connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="_on_mouse_exited"]
