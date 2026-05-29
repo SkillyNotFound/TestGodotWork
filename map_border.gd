@@ -9,6 +9,9 @@ var spacing_x: float
 var spacing_y: float
 var offset_x: float
 
+@export var tint_color: Color = Color.WHITE
+@export var tint_alpha: float = 1.0
+
 var border_coords: Array = []
 
 func _ready():
@@ -52,4 +55,4 @@ func _draw():
 		var cx = col * spacing_x + row_offset + tex_width * 0.5
 		var cy = row * spacing_y + tex_height * 0.5
 		var rect = Rect2(cx - tex_width * 0.5, cy - tex_height * 0.5, tex_width, tex_height)
-		draw_texture_rect(hex_texture, rect, false, Color.WHITE)
+		draw_texture_rect(hex_texture, rect, false, Color(tint_color, tint_alpha))
